@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Servers Hub - Discover the Best Minecraft Servers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .minecraft-font {
+            font-family: 'Minecraft', sans-serif;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        .server-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 0, 0.2);
+        }
+        .category-btn.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .server-icon {
+            background-color: #4a5568;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 160px;
+        }
+        .server-icon i {
+            font-size: 4rem;
+            color: #38a169;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-4">
+                    <!-- Logo -->
+                    <div>
+                        <a href="#" class="flex items-center py-5 px-2 text-green-400 hover:text-green-300">
+                            <i class="fas fa-cube text-2xl mr-2"></i>
+                            <span class="font-bold text-xl minecraft-font">Minecraft Servers Hub</span>
+                        </a>
+                    </div>
+                    <!-- Primary Nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#home" class="py-5 px-3 text-gray-300 hover:text-green-400 transition duration-300">Home</a>
+                        <a href="#find" class="py-5 px-3 text-gray-300 hover:text-green-400 transition duration-300">Find Servers</a>
+                        <a href="#contact" class="py-5 px-3 text-gray-300 hover:text-green-400 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button p-2 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-gray-800">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
+            <a href="#find" class="block py-2 px-4 text-sm hover:bg-gray-700">Find Servers</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-b from-gray-800 to-gray-900">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-green-400 minecraft-font">Discover Amazing Minecraft Servers</h1>
+                <p class="text-xl mb-8 text-gray-300">Find the perfect Minecraft server for your playstyle. Whether you're into PvP, Survival, Creative, or minigames, we've got you covered.</p>
+                <a href="#find" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center">
+                    <i class="fas fa-server mr-2"></i> Find Servers Now
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 md:w-96 h-64 md:h-96 bg-gray-700 rounded-full flex items-center justify-center floating">
+                    <i class="fas fa-server text-8xl text-green-400"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Why Choose Minecraft Servers Hub?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-green-400 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fast Search</h3>
+                    <p class="text-gray-300">Quickly find servers that match your preferences with our powerful filtering system.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-green-400 mb-4">
+                        <i class="fas fa-check-circle text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Verified Servers</h3>
+                    <p class="text-gray-300">All servers are checked to ensure they're active and safe to join.</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-green-400 mb-4">
+                        <i class="fas fa-mobile-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Cross-Platform</h3>
+                    <p class="text-gray-300">Find servers for Java, Bedrock, or both editions of Minecraft.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Servers Section -->
+    <section id="find" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Find Your Perfect Server</h2>
+            
+            <!-- Server Type Selection -->
+            <div class="flex flex-wrap justify-center mb-8 gap-4">
+                <button onclick="filterServers('all')" class="server-type-btn bg-gray-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 active">
+                    <i class="fas fa-globe mr-2"></i> All Servers
+                </button>
+                <button onclick="filterServers('java')" class="server-type-btn bg-gray-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    <i class="fab fa-java mr-2"></i> Java Edition
+                </button>
+                <button onclick="filterServers('bedrock')" class="server-type-btn bg-gray-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    <i class="fas fa-mobile-alt mr-2"></i> Bedrock Edition
+                </button>
+                <button onclick="filterServers('both')" class="server-type-btn bg-gray-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    <i class="fas fa-exchange-alt mr-2"></i> Java + Bedrock
+                </button>
+                <button onclick="filterServers('cracked')" class="server-type-btn bg-gray-700 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    <i class="fas fa-unlock-alt mr-2"></i> Cracked
+                </button>
+            </div>
+            
+            <!-- Category Selection -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-gray-300">Categories</h3>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="filterCategory('all')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300 active">
+                        All Categories
+                    </button>
+                    <button onclick="filterCategory('pvp')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        PvP
+                    </button>
+                    <button onclick="filterCategory('survival')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        Survival
+                    </button>
+                    <button onclick="filterCategory('creative')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        Creative
+                    </button>
+                    <button onclick="filterCategory('bedwars')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        Bedwars
+                    </button>
+                    <button onclick="filterCategory('skyblock')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        Skyblock
+                    </button>
+                    <button onclick="filterCategory('minigames')" class="category-btn bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition duration-300">
+                        Minigames
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Server List -->
+            <div id="server-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Server cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-400">Contact Us</h2>
+            
+            <div class="max-w-2xl mx-auto bg-gray-700 rounded-lg shadow-xl overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">Email</h3>
+                            <p class="text-gray-300">xtino900@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 p-3 rounded-full mr-4">
+                            <i class="fab fa-whatsapp text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">WhatsApp</h3>
+                            <p class="text-gray-300">+92 3005620188</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="bg-green-600 p-3 rounded-full mr-4">
+                            <i class="fab fa-microsoft text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">Microsoft Account</h3>
+                            <p class="text-gray-300">xtino900@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900 px-8 py-4">
+                    <p class="text-gray-400 text-sm text-center">
+                        <i class="fas fa-info-circle mr-2"></i> We typically respond within 24 hours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-cube text-2xl text-green-400 mr-2"></i>
+                    <span class="font-bold text-xl text-gray-100 minecraft-font">Minecraft Servers Hub</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2023 Minecraft Servers Hub. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-green-400 text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-green-400 text-sm transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-green-400 text-sm transition duration-300">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Server data
+        const servers = [
+            {
+                id: 1,
+                name: "Hypixel Network",
+                ip: "mc.hypixel.net",
+                port: "25565",
+                description: "The most popular Minecraft server with various minigames including Bedwars, Skywars, and more.",
+                type: "java",
+                category: "minigames",
+                players: "50,000+",
+                version: "1.8-1.19",
+                icon: "gamepad"
+            },
+            {
+                id: 2,
+                name: "The Hive",
+                ip: "play.hivemc.com",
+                port: "25565",
+                description: "Great for Bedrock players with awesome minigames like Hide and Seek and Deathrun.",
+                type: "bedrock",
+                category: "minigames",
+                players: "10,000+",
+                version: "1.8-1.19",
+                icon: "gamepad"
+            },
+            {
+                id: 3,
+                name: "Mineplex",
+                ip: "us.mineplex.com",
+                port: "25565",
+                description: "Classic minigame server with unique games you won't find anywhere else.",
+                type: "both",
+                category: "minigames",
+                players: "5,000+",
+                version: "1.8-1.19",
+                icon: "gamepad"
+            },
+            {
+                id: 4,
+                name: "Cubecraft",
+                ip: "play.cubecraft.net",
+                port: "19132",
+                description: "Popular Bedrock server with Skywars, Eggwars, and other exciting games.",
+                type: "bedrock",
+                category: "bedwars",
+                players: "15,000+",
+                version: "1.8-1.19",
+                icon: "chess"
+            },
+            {
+                id: 5,
+                name: "WildCraft",
+                ip: "wildcraft.server.com",
+                port: "25565",
+                description: "Amazing survival server with economy, land claiming, and custom mobs.",
+                type: "java",
+                category: "survival",
+                players: "2,000+",
+                version: "1.16-1.19",
+                icon: "tree"
+            },
+            {
+                id: 6,
+                name: "CreativeFun",
+                ip: "creative.server.net",
+                port: "25566",
+                description: "Pure creative server with unlimited building potential and worldedit.",
+                type: "both",
+                category: "creative",
+                players: "500+",
+                version: "1.12-1.19",
+                icon: "paint-brush"
+            },
+            {
+                id: 7,
+                name: "PvP Legacy",
+                ip: "pvp.legacy.com",
+                port: "25565",
+                description: "The best PvP server with custom kits, arenas, and tournaments.",
+                type: "java",
+                category: "pvp",
+                players: "1,000+",
+                version: "1.8",
+                icon: "crosshairs"
+            },
+            {
+                id: 8,
+                name: "Skyblock Extreme",
+                ip: "sky.extreme.com",
+                port: "25570",
+                description: "Challenging skyblock with custom islands, bosses, and economy.",
+                type: "both",
+                category: "skyblock",
+                players: "800+",
+                version: "1.16-1.19",
+                icon: "cloud"
+            },
+            {
+                id: 9,
+                name: "FreeCraft",
+                ip: "free.cracked.net",
+                port: "25565",
+                description: "Premium cracked server with all features available for non-premium users.",
+                type: "cracked",
+                category: "survival",
+                players: "3,000+",
+                version: "1.8-1.19",
+                icon: "unlock-alt"
+            }
+        ];
+        
+        // Current filters
+        let currentType = 'all';
+        let currentCategory = 'all';
+        
+        // Initialize server list
+        function initServerList() {
+            const serverListElement = document.getElementById('server-list');
+            serverListElement.innerHTML = '';
+            
+            servers.forEach(server => {
+                if ((currentType === 'all' || server.type === currentType || 
+                     (currentType === 'both' && server.type === 'both')) && 
+                    (currentCategory === 'all' || server.category === currentCategory)) {
+                    const serverCard = document.createElement('div');
+                    serverCard.className = 'server-card bg-gray-800 rounded-lg overflow-hidden shadow-lg transition duration-300 hover:shadow-xl';
+                    serverCard.innerHTML = `
+                        <div class="server-icon">
+                            <i class="fas fa-${server.icon}"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-green-400">${server.name}</h3>
+                                <span class="bg-gray-700 text-green-400 text-xs px-2 py-1 rounded">
+                                    ${server.players} online
+                                </span>
+                            </div>
+                            <div class="flex items-center text-gray-400 text-sm mb-3">
+                                <i class="fas fa-plug mr-1"></i>
+                                <span class="mr-3">${server.ip}</span>
+                                <i class="fas fa-ethernet mr-1"></i>
+                                <span>${server.port}</span>
+                            </div>
+                            <p class="text-gray-300 mb-4">${server.description}</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-green-400 text-xs px-2 py-1 rounded">
+                                    ${getTypeLabel(server.type)}
+                                </span>
+                                <span class="bg-gray-700 text-green-400 text-xs px-2 py-1 rounded">
+                                    ${getCategoryLabel(server.category)}
+                                </span>
+                                <span class="bg-gray-700 text-green-400 text-xs px-2 py-1 rounded">
+                                    ${server.version}
+                                </span>
+                            </div>
+                            <button class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300">
+                                <i class="fas fa-link mr-2"></i> Connect
+                            </button>
+                        </div>
+                    `;
+                    serverListElement.appendChild(serverCard);
+                }
+            });
+            
+            if (serverListElement.children.length === 0) {
+                serverListElement.innerHTML = `
+                    <div class="col-span-full text-center py-10">
+                        <i class="fas fa-server text-5xl text-gray-600 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-400">No servers found matching your criteria</h3>
+                        <p class="text-gray-500 mt-2">Try adjusting your filters</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Filter servers by type
+        function filterServers(type) {
+            currentType = type;
+            updateActiveButtons();
+            initServerList();
+        }
+        
+        // Filter servers by category
+        function filterCategory(category) {
+            currentCategory = category;
+            updateActiveButtons();
+            initServerList();
+        }
+        
+        // Update active button states
+        function updateActiveButtons() {
+            // Update server type buttons
+            const serverTypeButtons = document.querySelectorAll('.server-type-btn');
+            serverTypeButtons.forEach(button => {
+                const type = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                if (type === currentType) {
+                    button.classList.add('bg-green-600', 'text-white');
+                    button.classList.remove('bg-gray-700', 'hover:bg-green-600');
+                } else {
+                    button.classList.remove('bg-green-600', 'text-white');
+                    button.classList.add('bg-gray-700', 'hover:bg-green-600');
+                }
+            });
+            
+            // Update category buttons
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(button => {
+                const category = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                if (category === currentCategory) {
+                    button.classList.add('bg-green-600', 'text-white');
+                    button.classList.remove('bg-gray-800', 'hover:bg-gray-700');
+                } else {
+                    button.classList.remove('bg-green-600', 'text-white');
+                    button.classList.add('bg-gray-800', 'hover:bg-gray-700');
+                }
+            });
+        }
+        
+        // Helper functions
+        function getTypeLabel(type) {
+            const labels = {
+                'java': 'Java Edition',
+                'bedrock': 'Bedrock Edition',
+                'both': 'Java + Bedrock',
+                'cracked': 'Cracked'
+            };
+            return labels[type] || type;
+        }
+        
+        function getCategoryLabel(category) {
+            const labels = {
+                'pvp': 'PvP',
+                'survival': 'Survival',
+                'creative': 'Creative',
+                'bedwars': 'Bedwars',
+                'skyblock': 'Skyblock',
+                'minigames': 'Minigames'
+            };
+            return labels[category] || category;
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initServerList();
+            updateActiveButtons();
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
